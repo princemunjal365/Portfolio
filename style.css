@@ -1,0 +1,458 @@
+:root {
+  --sky-blue: #70d6ff;
+  --card-bg: #ffffff;
+  --text-dark: #2d3748;
+  --border-anime: 4px solid #1a202c;
+  --shadow-anime: 6px 6px 0px #1a202c;
+  --font-main: "Quicksand", sans-serif;
+  --font-heading: "Fredoka", cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--sky-blue);
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  padding: 3rem 1rem;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Floating Cartoon Clouds Background */
+.anime-sky-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  background: linear-gradient(180deg, #59cbe8 0%, #a0e9ff 100%);
+}
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  animation: floatClouds 25s infinite linear;
+}
+.c1 {
+  width: 120px;
+  height: 40px;
+  top: 10%;
+  left: -150px;
+  animation-duration: 30s;
+}
+.c2 {
+  width: 180px;
+  height: 60px;
+  top: 40%;
+  left: -200px;
+  animation-duration: 45s;
+  animation-delay: 5s;
+}
+.c3 {
+  width: 90px;
+  height: 30px;
+  top: 75%;
+  left: -120px;
+  animation-duration: 25s;
+  animation-delay: 2s;
+}
+@keyframes floatClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100vw + 300px));
+  }
+}
+
+.anime-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Generic Anime Card */
+.anime-card {
+  background: var(--card-bg);
+  border: var(--border-anime);
+  border-radius: 20px;
+  box-shadow: var(--shadow-anime);
+  padding: 2rem;
+  position: relative;
+}
+
+/* Trainer Passport Header */
+.trainer-card {
+  background: #fffdf0;
+  border: 5px solid #1a202c;
+}
+
+.pokeball-badge {
+  position: absolute;
+  top: -16px;
+  right: 25px;
+  background: #ff5959;
+  color: #fff;
+  font-family: var(--font-heading);
+  padding: 0.2rem 1rem;
+  border: 3px solid #1a202c;
+  border-radius: 20px;
+  box-shadow: 3px 3px 0px #1a202c;
+  transform: rotate(4deg);
+}
+
+.trainer-main {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.avatar-frame {
+  width: 130px;
+  height: 130px;
+  background: #ffde59;
+  border-radius: 50%;
+  border: var(--border-anime);
+  padding: 4px;
+  box-shadow: 4px 4px 0px #1a202c;
+}
+.trainer-pfp {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.trainer-bio-text h1 {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  line-height: 1.1;
+}
+.trainer-bio-text h2 {
+  font-size: 1.1rem;
+  color: #4a5568;
+  font-weight: 700;
+  margin: 0.2rem 0 0.5rem;
+}
+.trainer-bio-text p {
+  font-weight: 600;
+  color: #718096;
+  font-style: italic;
+}
+
+/* Portal Links */
+.portal-links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.portal-btn {
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: #1a202c;
+  background: #fff;
+  border: 3px solid #1a202c;
+  padding: 0.4rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0px #1a202c;
+  transition: 0.1s;
+  display: inline-block;
+}
+.portal-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #1a202c;
+}
+.btn-mail {
+  background: #ffd166;
+}
+.btn-linkedin {
+  background: #48cae4;
+}
+.btn-github {
+  background: #adb5bd;
+}
+.btn-insta {
+  background: #ff70a6;
+}
+.btn-codolio {
+  background: #70e000;
+}
+
+/* Grid */
+.anime-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Card Variants & Tags */
+.card-dora {
+  background: #e0fbfc;
+}
+.card-poke {
+  background: #fdf0ed;
+}
+.card-yellow {
+  background: #fffadc;
+}
+.card-pink {
+  background: #ffe3e3;
+}
+.card-green {
+  background: #e8f5e9;
+}
+
+.card-tag {
+  position: absolute;
+  top: -14px;
+  left: 20px;
+  background: #ff5959;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  padding: 0.2rem 0.8rem;
+  border: 3px solid #1a202c;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px #1a202c;
+  transform: rotate(-2deg);
+}
+.tag-blue {
+  background: #48cae4;
+  color: #1a202c;
+}
+.tag-red {
+  background: #ff6b6b;
+}
+.tag-purple {
+  background: #9b5de5;
+}
+.tag-orange {
+  background: #fb8500;
+}
+
+.story-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.story-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Education Gym Box */
+.gym-box h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+}
+.gym-box p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  margin-bottom: 0.4rem;
+}
+.badge-tag {
+  background: #ffde59;
+  border: 2px solid #1a202c;
+  padding: 0.1rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  box-shadow: 2px 2px 0px #1a202c;
+}
+
+/* Gadget / Project Box */
+.gadget-box {
+  background: #fff;
+  border: 3px solid #1a202c;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 4px 4px 0px #1a202c;
+}
+.gadget-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+.gadget-head h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+}
+.gadget-status {
+  background: #38b000;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 2px solid #1a202c;
+}
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.tech-pills span {
+  background: #1a202c;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+}
+.gadget-link {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #0077b5;
+  font-weight: 700;
+}
+.gadget-link:hover {
+  text-decoration: underline;
+}
+
+/* Stats Boxes */
+.stats-anime-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.anime-stat-box {
+  background: #fff;
+  border: 3px solid #1a202c;
+  border-radius: 12px;
+  padding: 1rem;
+  flex: 1 1 calc(50% - 0.5rem);
+  text-align: center;
+  box-shadow: 3px 3px 0px #1a202c;
+}
+.full-box {
+  flex: 1 1 100%;
+  background: #ffde59;
+}
+.stat-digit {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  display: block;
+  line-height: 1;
+}
+.stat-desc {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.codolio-anime-link {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: #1a202c;
+  text-decoration: none;
+  background: #fff;
+  border: 3px solid #1a202c;
+  padding: 0.4rem 1rem;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 3px 3px 0px #1a202c;
+}
+
+/* Skills Inventory Pills (Pokémon Types) */
+.inventory-category {
+  margin-bottom: 1.2rem;
+}
+.inventory-category:last-child {
+  margin-bottom: 0;
+}
+.inventory-category h4 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+}
+
+.pill-type {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  border: 2px solid #1a202c;
+  box-shadow: 2px 2px 0px #1a202c;
+}
+.type-normal {
+  background: #a8a77a;
+  color: #111;
+}
+.type-fire {
+  background: #ee8130;
+  color: #fff;
+}
+.type-water {
+  background: #6390f0;
+  color: #fff;
+}
+.type-electric {
+  background: #f7d02c;
+  color: #111;
+}
+.type-steel {
+  background: #b7b7ce;
+  color: #111;
+}
+.type-rock {
+  background: #b6a136;
+  color: #fff;
+}
+.type-flying {
+  background: #a98ff3;
+  color: #fff;
+}
+.type-psychic {
+  background: #f95587;
+  color: #fff;
+}
+.type-dark {
+  background: #705746;
+  color: #fff;
+}
+.type-dragon {
+  background: #6f35fc;
+  color: #fff;
+}
+.type-ground {
+  background: #e2bf65;
+  color: #111;
+}
+
+@media (max-width: 850px) {
+  .anime-grid {
+    grid-template-columns: 1fr;
+  }
+  .trainer-main {
+    justify-content: center;
+    text-align: center;
+  }
+  .portal-links {
+    justify-content: center;
+  }
+}
